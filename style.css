@@ -1,0 +1,292 @@
+#servizi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    background-color: beige;
+    text-align: center;
+
+}
+
+
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    max-width: 1000px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 350px;
+}
+
+.card {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-image: url("apicoltore.jpeg");
+    background-repeat: no-repeat;
+	background-position: center; 
+	background-size: 100% 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px 0 rgba(209, 231, 108, 0.5);
+    border-color: rgb(83, 49, 10);
+}
+
+/* Nasconde il contenuto aggiuntivo */
+.card .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(221, 245, 115, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.overlay .btn {
+    padding: 10px 15px;
+    background-color: rgb(214, 186, 28);
+    color: rgb(109, 65, 29);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 75%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.overlay .btn:hover {
+    background-color: #ffd700;
+}
+
+
+/* Stile per le scritte sotto le card */
+.column p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8B4513;
+    margin-top: 20px;
+}
+
+
+/*----------------------*/
+.contact-info a {
+    color: #b2b022;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.map-container, .contact-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body{	    
+	margin:0;
+	position: relative;		
+	}	
+#contenitore{
+	background-image: url("sforndo.jpg");
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: 100% 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: auto;	  
+	text-align: center;			  
+	}
+
+    #contatti{
+        background-image: url("sfondo.png");
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: 100% 100%;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: auto;	  
+        text-align: center;			  
+        }
+/*----HOME----*/
+#home{
+	background-color: rgba(0,0,0,0.3);
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index:2;			
+}
+#titolo_home{
+	position: relative;
+	top:40%;
+    color: #fff;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #FFFFFF;
+	border-bottom-color: rgba(255,255,255,0.35);
+	display: inline-block;
+}
+
+
+
+
+/*---sezioni---*/
+#contenitore_2{
+	width: 100%;
+	 position:relative;
+	 height: 100%;
+	 background:white;
+ }
+.div_sez{
+	background:white;
+	width: 100%;
+	height: 100%;
+	z-index:-3;
+	margin-top: 0%;
+}
+.titolo_sez{
+	position: relative;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #222222;
+	border-bottom-color: black(255,255,255,0.35);
+	display: inline-block;
+	font-size: 50px;
+	color:#8B4513;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9cc4c; /* Colore di sfondo */
+    padding: 10px 20px;
+    position: fixed; /* Rende la navbar fissa in alto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.nav-left .nav-link {
+    display: none; /* Nasconde i link nella navbar su schermi piccoli */
+}
+.nav-right {
+    color: white;
+    font-size: 20px;
+}
+
+.nav a {
+    color: #8B4513;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav a:hover {
+    transform: scale(1.2);
+    color: #f4a261;
+}
+
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 55px;
+    color: #8B4513;
+}
+
+/* Menu sempre visibile */
+.menu {
+    display: none;
+    position: fixed;
+    top: 55px;
+    background-color: #d1b741;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: 100%;
+    z-index: 100;
+}
+.menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.menu a:hover {
+    background-color: #f4a261;
+}
+
+
+#burger{
+    color: #8B4513;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+#burger:hover {
+    transform: scale(1.2);
+    color: #f4a261;
+}
+
+
+/*----RESPONSIVE-----*/
+@media screen and (max-width:1300px) {
+  #contenitore{background-size:auto;}
+  .div_sez{height:auto;}
+
+}
+
+@media screen and (min-width: 768px) {
+    .nav-left .nav-link {
+        display: inline; /* Mostra i link solo su schermi più grandi */
+    }
+}

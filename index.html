@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	</head>
+	<body >
+		<div id="contenitore" data-spy="scroll" data-target=".navbar" data-offset="-50">
+		    <div id="home">
+			    <h1 id="titolo_home">Un Luogo dove tutto può accadere...</h1></br>
+
+			</div>
+			<div id="contenitore_2" >
+                <div class="nav">
+                    <div class="nav-left">
+                        <i id="burger" class="fas fa-bars"onclick="toggleMenu()">  </i>
+                        <a href="#servizi" class="nav-link">Servizi</a>
+                        <a href="#curiosità" class="nav-link">Curiosità</a>
+                        <a href="#contatti" class="nav-link">Contatti</a>
+                    </div>
+                    
+                    <div class="nav-right">
+                        <span class="site-title">Manfredini & Stella</span>
+                    </div>
+                </div>
+                <div class="menu" id="menu">
+                    <a href="#home" onclick="closeMenu()">Home</a>
+                    <a href="#servizi" onclick="closeMenu()">Servizi</a>
+                    <a href="#curiosità" onclick="closeMenu()">Curiosità</a>
+                    <a href="#" onclick="closeMenu()">Foto</a>
+                    <a href="#" onclick="closeMenu()">Prodotti</a>
+                    <a href="#contatti" onclick="closeMenu()">Contatti</a>
+                </div>	
+				<div id="servizi" class="div_sez">
+                    </br>
+                    <h1 class="titolo_sez">I nostri servizi</h1></br>
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                
+                                <div class="overlay">
+                                    <p>Una lunga tradizione nella cura delle api e dei loro prodotti.</p>
+                                    
+                                    <button class="btn" onclick="location.href='operazioniCommissione.html'">Scopri di più</button>
+                                </div>
+                            </div>
+                            <p>Apicoltura</p>
+                        </div>
+                        <div class="column">
+                            <div class="card" style="background-image: url('image0.jpeg');">
+                                
+                                <div class="overlay">
+                                    <p>Ci sono esperienze che non si possono descrivere... Bisogna viverle!</p>
+                                    
+                                    <button class="btn" onclick="location.href='#'">Scopri di più</button>
+                                </div>
+                            </div>
+                            <p>Fattoria</p>
+                        </div>
+                    </div>
+                </div>
+                
+				<div id="curiosità" class="div_sez" style="background-color:beige;">
+                </br>
+					<h1 class="titolo_sez">Curiosità</h1></br>
+                    <p>........</p>
+                    <p>........</p>
+                    <p>........</p>
+                    <p>........</p>
+                    <p>........</p>
+                    <p>........</p>
+
+                    <p>........</p>
+                    <p>........</p>
+                    <p>........</p>
+                </br>
+                </div>
+				
+				<div id="contatti" class="div_sez" style="background-image: url('sfondo.png');">		
+                </br>
+                    <div class="contact-container">
+                        <h2>Contattaci</h2>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> <b>Email:</b> <a href="mailto:manfredini.mir@gmail.com">manfredini.mir@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> <b>Telefono:</b> <a href="tel:+393287219902">+39 328 721 9902</a></p>
+                        </div>
+                    </div>
+                </br>
+					<div class="map-container">
+                        <h2>Dove Trovarci</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.298452714822!2d11.872898075448928!3d42.63383247116869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1329260829c4f575%3A0x85e4cd7c92c09785!2sApicoltura%20Manfredini%26Stella!5e0!3m2!1sit!2sit!4v1742647163537!5m2!1sit!2sit" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                
+ 
+
+				</div>
+			</div>
+		</div>
+
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            }
+            function closeMenu() {
+            document.getElementById("menu").style.display = "none";
+        }
+        </script>
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+    
+	</html>
