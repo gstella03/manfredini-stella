@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
-		<title>Apicoltura Manfredini & Stella</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,18 +9,20 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 	</head>
 	<body >
-		<div id="contenitore" data-spy="scroll" data-target=".navbar" data-offset="-50">
+		<div id="contenitore" data-spy="scroll" data-target=".navbar" data-offset="-50"> 
 		    <div id="home">
-			    <h1 id="titolo_home">Un Luogo dove tutto può accadere...</h1></br>
+                <br><br><br>
+                <img id="logo" src="foto/varie/logo.png" style="width: 300px;">
+			    <h1 id="titolo_home">Un Luogo dove tutto può accadere...</h1>
 
 			</div>
-			<div id="contenitore_2" >
+			<div id="contenitore_2" > 
                 <div class="nav">
                     <div class="nav-left">
                         <i id="burger" class="fas fa-bars"onclick="toggleMenu()">  </i>
-                        <a href="#servizi" class="nav-link">Servizi</a>
-                        <a href="#curiosità" class="nav-link">Curiosità</a>
-                        <a href="#contatti" class="nav-link">Contatti</a>
+                        <a href="index.html#servizi" class="nav-link">Servizi</a>
+                        <a href="index.html#curiosità" class="nav-link">Curiosità</a>
+                        <a href="index.html#contatti" class="nav-link">Contatti</a>
                     </div>
                     
                     <div class="nav-right">
@@ -29,35 +30,36 @@
                     </div>
                 </div>
                 <div class="menu" id="menu">
-                    <a href="#home" onclick="closeMenu()">Home</a>
-                    <a href="#servizi" onclick="closeMenu()">Servizi</a>
-                    <a href="#curiosità" onclick="closeMenu()">Curiosità</a>
-                    <a href="#" onclick="closeMenu()">Foto</a>
-                    <a href="#" onclick="closeMenu()">Prodotti</a>
-                    <a href="#contatti" onclick="closeMenu()">Contatti</a>
+                    <a href="index.html#home" onclick="closeMenu()">Home</a>
+                    <a href="index.html#servizi" onclick="closeMenu()">Servizi</a>
+                    <a href="index.html#curiosità" onclick="closeMenu()">Curiosità</a>
+                    <a href="foto.html" onclick="closeMenu()">Foto</a>
+                    <a href="storia.html" onclick="closeMenu()">Storia</a>
+                    <!--<a href="prodotti.html" onclick="closeMenu()">Prodotti</a>-->
+                    <a href="index.html#contatti" onclick="closeMenu()">Contatti</a>
                 </div>	
 				<div id="servizi" class="div_sez">
                     </br>
                     <h1 class="titolo_sez">I nostri servizi</h1></br>
                     <div class="row">
                         <div class="column">
-                            <div class="card">
+                            <div class="card" style="background-image: url('foto/varie/babbo2.jpg');">
                                 
                                 <div class="overlay">
                                     <p>Una lunga tradizione nella cura delle api e dei loro prodotti.</p>
                                     
-                                    <button class="btn" onclick="location.href='operazioniCommissione.html'">Scopri di più</button>
+                                    <button class="btn" onclick="location.href='foto.html'">Scopri di più</button>
                                 </div>
                             </div>
                             <p>Apicoltura</p>
                         </div>
                         <div class="column">
-                            <div class="card" style="background-image: url('image0.jpeg');">
+                            <div class="card" style="background-image: url('foto/varie/serviziFattoria.png');">
                                 
                                 <div class="overlay">
                                     <p>Ci sono esperienze che non si possono descrivere... Bisogna viverle!</p>
                                     
-                                    <button class="btn" onclick="location.href='#'">Scopri di più</button>
+                                    <button class="btn" onclick="location.href='#eventi'">Scopri di più</button>
                                 </div>
                             </div>
                             <p>Fattoria</p>
@@ -67,39 +69,81 @@
                 
 				<div id="curiosità" class="div_sez" style="background-color:beige;">
                 </br>
-					<h1 class="titolo_sez">Curiosità</h1></br>
-                    <p>........</p>
-                    <p>........</p>
-                    <p>........</p>
-                    <p>........</p>
-                    <p>........</p>
-                    <p>........</p>
-
-                    <p>........</p>
-                    <p>........</p>
-                    <p>........</p>
-                </br>
+                    <h1 class="titolo_sez">Il Miele – Curiosità</h1>
+                    
+                    <div class="testo">
+                        <p>
+                          L'ape succhia il nettare dai fiori e lo trasforma scindendo gli zuccheri complessi in zuccheri semplici attraverso processi enzimatici.  
+                          Il miele è quindi ricco di <strong>glucosio</strong> e <strong>fruttosio</strong>, zuccheri direttamente assimilabili, ed è naturalmente carico di enzimi.
+                          È importante non superare i <strong>30°C</strong> nella lavorazione del miele per non danneggiare questi preziosi enzimi.
+                        </p>
+                        <p>
+                          La <strong>cristallizzazione</strong> è un fenomeno naturale: ogni tipo di miele ha una diversa propensione a cristallizzare.
+                        </p>
+                        <p>
+                          Il miele è <strong>sconsigliato per i bambini sotto l’anno di età</strong>, poiché potrebbe contenere spore di <em>Clostridium botulinum</em> in grado di svilupparsi
+                          nell’intestino ancora immaturo del lattante, provocando tossine pericolose.
+                        </p>
+                        <p>
+                          L’indice glicemico del miele varia in base al tipo:
+                          <ul>
+                            <li>Miele di acacia: IG <strong>32</strong></li>
+                            <li>Zucchero: IG <strong>61</strong></li>
+                            <li>Pasta: IG <strong>47–65</strong></li>
+                            <li>Altri mieli possono arrivare fino a IG <strong>95</strong></li>
+                          </ul>
+                        </p>
+                        <p>
+                          Assumendo miele in <strong>favo</strong>, mangiando anche la cera, si ha un apporto considerevole di <strong>vitamina A</strong>:
+                          <ul>
+                            <li>100 g di carote = 2–9 mg di carotenoidi</li>
+                            <li>100 g di cera = 8–12 mg di carotenoidi</li>
+                          </ul>
+                        </p>
+                      
+                        <p>
+                          Valore energetico:
+                          <ul>
+                            <li>100 g di miele = <strong>320 kcal</strong></li>
+                            <li>100 g di zucchero = <strong>400 kcal</strong></li>
+                          </ul>
+                        </p>
+                      </div>
+                      
                 </div>
 				
-				<div id="contatti" class="div_sez" style="background-image: url('sfondo.png');">		
+
+                <div id="eventi" class="div_sez" style="background-color:beige;">
+                </br>
+					<h1 class="titolo_sez">Eventi</h1></br>
+                    <img id="myImg" src="foto/eventi/Apiario Aperto.png" alt="Fattoria Didattica" style="width:100%;max-width:300px">
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                    </br>
+                </br>
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                </div>
+
+				<div id="contatti" class="div_sez" style="background-image: url('foto/varie/sfondoContatti.png');">		
                 </br>
                     <div class="contact-container">
-                        <h2>Contattaci</h2>
+                        <h2 style="color: #8B4513;">Contattaci</h2>
                         <div class="contact-info">
-                            <p><i class="fas fa-envelope"></i> <b>Email:</b> <a href="mailto:manfredini.mir@gmail.com">manfredini.mir@gmail.com</a></p>
-                            <p><i class="fas fa-phone"></i> <b>Telefono:</b> <a href="tel:+393287219902">+39 328 721 9902</a></p>
+                            <p style="color: #8B4513;"><i class="fas fa-envelope"></i> <b>Email:</b> <a href="mailto:info@manfrediniestella.it">info@manfrediniestella.it</a></p>
+                            <p style="color: #8B4513;"><i class="fas fa-phone"></i> <b>Telefono:</b> <a href="tel:+393287219902">+39 328 721 9902</a></p>
                         </div>
                     </div>
                 </br>
 					<div class="map-container">
-                        <h2>Dove Trovarci</h2>
+                        <h2 style="color: #8B4513;">Dove Trovarci</h2>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.298452714822!2d11.872898075448928!3d42.63383247116869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1329260829c4f575%3A0x85e4cd7c92c09785!2sApicoltura%20Manfredini%26Stella!5e0!3m2!1sit!2sit!4v1742647163537!5m2!1sit!2sit" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
                     </div>
-                
- 
-
+                </br>
 				</div>
-			</div>
+			</div> 
 		</div>
 
         <script>
@@ -113,6 +157,27 @@
             }
             function closeMenu() {
             document.getElementById("menu").style.display = "none";
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
         }
         </script>
 

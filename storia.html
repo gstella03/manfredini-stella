@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f1e3;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+      font-size: 50px;
+      word-break: break-word;
+      color: rgb(109, 65, 29);
+    }
+    h2 {
+        color: rgb(146, 88, 41);
+    }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 800px;
+  flex-direction: row;
+}
+
+.column img {
+  width: 40%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.column .text {
+  width: 60%;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.column:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: rgb(146, 88, 41);
+      font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #e9cc4c;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    flex-direction: column !important;
+    text-align: center;
+    width: 100%;
+  }
+  .column img, .column .text {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9cc4c; /* Colore di sfondo */
+    padding: 10px 20px;
+    position: fixed; /* Rende la navbar fissa in alto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.nav-left .nav-link {
+    display: none; /* Nasconde i link nella navbar su schermi piccoli */
+}
+.nav-right {
+    color: white;
+    font-size: 20px;
+}
+
+.nav a {
+    color: #8B4513;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav a:hover {
+    transform: scale(1.2);
+    color: #b89e2c;
+}
+
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 55px;
+    color: #8B4513;
+}
+
+/* Menu sempre visibile */
+.menu {
+    display: none;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    background-color: #d1b741;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: 100%;
+    z-index: 100;
+    text-align: center;
+}
+.menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.menu a:hover {
+    background-color: #b89e2c;
+}
+
+
+#burger{
+    color: #8B4513;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+#burger:hover {
+    transform: scale(1.2);
+    color: #b89e2c;
+}
+@media screen and (max-width:1300px) {
+  .div_sez{height:auto;}
+
+}
+@media screen and (min-width: 768px) {
+    .nav-left .nav-link {
+        display: inline; /* Mostra i link solo su schermi più grandi */
+    }
+}
+.testo {
+    margin-top:15%;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: #fefcf6;
+    color: #4a3b25;
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    border-radius: 10px;
+}
+
+.testo h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #8B4513;
+    text-align: center;
+}
+
+.testo h2 {
+    font-size: 24px;
+    color: #b89e2c;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.testo hr {
+    border: none;
+    border-top: 2px solid #cdb674;
+    width: 100px;
+    margin: 0 auto 20px auto;
+}
+
+.testo .intro {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.testo-blocco {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.testo-blocco img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.testo-blocco .small-img {
+    width: 150px;
+}
+
+.testo-blocco p {
+    flex: 1;
+    font-size: 18px;
+}
+
+.testo-blocco.reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .testo-blocco,
+    .testo-blocco.reverse {
+        flex-direction: column;
+        text-align: justify;
+    }
+
+    .testo-blocco img {
+        margin-bottom: 15px;
+    }
+}
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <i id="burger" class="fas fa-bars"onclick="toggleMenu()">  </i>
+            <a href="index.html#servizi" class="nav-link">Servizi</a>
+            <a href="index.html#curiosità" class="nav-link">Curiosità</a>
+            <a href="index.html#contatti" class="nav-link">Contatti</a>
+        </div>
+        
+        <div class="nav-right">
+            <span class="site-title">Manfredini & Stella</span>
+        </div>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html#home" onclick="closeMenu()">Home</a>
+      <a href="index.html#servizi" onclick="closeMenu()">Servizi</a>
+      <a href="index.html#curiosità" onclick="closeMenu()">Curiosità</a>
+      <a href="foto.html" onclick="closeMenu()">Foto</a>
+      <a href="storia.html" onclick="closeMenu()">Storia</a>
+      <!--<a href="prodotti.html" onclick="closeMenu()">Prodotti</a>-->
+      <a href="index.html#contatti" onclick="closeMenu()">Contatti</a>
+    </div>
+
+    <div class="testo">
+    
+      <h1>La nostra storia</h1>
+      <hr>
+      <h2>Dal 1920</h2>
+    
+      <p class="intro">
+        Da una centenaria tradizione apistica ha origine la nostra azienda, che nasce nel territorio di Gradoli come <strong>allevamento di api regine</strong>.
+      </p>
+    
+      <div class="testo-blocco">
+        <img src="foto/storia/fotoPio.jpg" alt="Pio Manfredini">
+        <p>
+          La nostra storia ha inizio negli anni '20 del secolo scorso, quando <strong>Pio Manfredini</strong>, nell'appennino Modenese,
+          si appassiona al mondo delle api grazie al padre <strong>Giustiniano</strong>, che praticava l'apicoltura su bugni rustici.
+          Decide quindi di costruire le prime arnie razionali a favo mobile.
+        </p>
+      </div>
+    
+      <div class="testo-blocco reverse">
+        <img src="foto/storia/diplomaPio.jpg" alt="Diploma Pio">
+        <p>
+          Pio studia, si documenta, partecipa a corsi di formazione e consegue a Torino uno dei primi diplomi in apicoltura.
+          Dal 1930, oltre al miele, produce anche <strong>api regine</strong> e <strong>pappa reale</strong>.
+          Pio tramanda il suo sapere e la sua passione per il mondo delle api ai suo figli.
+        </p>
+      </div>
+    
+      <div class="testo-blocco">
+        <img src="foto/storia/nonnoSvezia.jpg" alt="Mario in Norvegia" class="small-img">
+        <p>
+          <strong>Mario</strong>, il più piccolo della famiglia, viaggia in Norvegia per approfondire le conoscenze sull'allevamento delle api regine 
+          e le trasmette alla sorella <strong>Clementina</strong> che si specializza in questo settore. Insieme ai fratelli Giustino, Paolo ed Agostino, 
+          Mario scopre i pascoli della Maremma ed iniziano, ognuno per conto proprio,  a trasportare le arnie in questo promettente territorio.
+          Negli anni <strong>'80</strong>   l' apicoltura dei <strong>Manfredini</strong> è già una realtà concreta e radicata nel territorio del centro Italia, una vera conquista, 
+          costruita giorno dopo giorno, con impegno, sacrifici e tanto lavoro.
+        </p>
+      </div>
+    
+      <div class="testo-blocco reverse">
+        <img src="foto/storia/miriamTommaso.jpg" alt="Miriam e Tommaso">
+        <p>
+          È nel 2001 che , sulle orme del padre Mario e della zia Clementina, nasce la società fra <strong>Miriam</strong> ed il marito <strong>Tommaso</strong>, anche lui apicoltore.
+          Nel corso degli anni la nostra attività si è diversificata ed è divenuta multifunzionale abbracciando i vari settori dell' apicoltura fra i quali: 
+          creazione di sciami d' api artificiali, produzione di miele e lavorazione della cera fino a divenire anche <strong>fattoria didattica</strong>.
+        </p>
+      </div>
+    </div>
+    
+    
+
+<script>
+  filterSelection("all");
+  function filterSelection(c) {
+    var elements = document.getElementsByClassName("column");
+    if (c == "all") c = "";
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.display = elements[i].className.indexOf(c) > -1 ? "flex" : "none";
+    }
+  }
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+  }
+  function closeMenu() {
+    document.getElementById("menu").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
