@@ -1,284 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-        background-color: #f5f1e3;
-      padding: 20px;
-      margin: 0;
-      position: relative;
-      font-family: Arial, sans-serif;
-    }
-    
-    .main {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    
-    h1 {
-      font-size: 50px;
-      word-break: break-word;
-      color: rgb(109, 65, 29);
-    }
-    h2 {
-        color: rgb(146, 88, 41);
-    }
-
-    
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    
-    .column {
-      flex: 1 1 calc(33.33% - 16px);
-      display: none;
-      margin: 8px;
-      max-width: 300px;
-    }
-    
-    .content {
-      background-color: white;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .content img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    
-    .show {
-      display: block;
-    }
-    
-    .btn {
-      border: none;
-      outline: none;
-      padding: 12px 16px;
-      background-color: white;
-      cursor: pointer;
-      margin: 5px;
-      border-radius: 5px;
-      transition: 0.3s;
-      color: rgb(146, 88, 41);
-      font-weight: bold;
-    }
-    
-    .btn:hover {
-      background-color: #ddd;
-    }
-    
-    .btn.active {
-      background-color: #e9cc4c;
-      color: white;
-    }
-
-    .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e9cc4c; /* Colore di sfondo */
-    padding: 10px 20px;
-    position: fixed; /* Rende la navbar fissa in alto */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-.nav-left .nav-link {
-    display: none; /* Nasconde i link nella navbar su schermi piccoli */
-}
-.nav-right {
-    color: white;
-    font-size: 20px;
-}
-
-.nav a {
-    color: #8B4513;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.nav a:hover {
-    transform: scale(1.2);
-    color: #b89e2c;
-}
-
-.site-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 55px;
-    color: #8B4513;
-}
-
-/* Menu sempre visibile */
-.menu {
-    display: none;
-    position: fixed;
-    top: 55px;
-    left: 0;
-    background-color: #d1b741;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    height: 100%;
-    z-index: 100;
-    text-align: center;
-}
-.menu a {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
-.menu a:hover {
-    background-color: #b89e2c;
-}
-
-
-#burger{
-    color: #8B4513;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    font-size: 20px;
-
-}
-#burger:hover {
-    transform: scale(1.2);
-    color: #b89e2c;
-}
-@media screen and (max-width:1300px) {
-  .div_sez{height:auto;}
-
-}
-@media screen and (min-width: 768px) {
-    .nav-left .nav-link {
-        display: inline; /* Mostra i link solo su schermi più grandi */
-    }
-}
-    
-    @media screen and (max-width: 768px) {
-      .column {
-        flex: 1 1 calc(50% - 16px);
-        max-width: 50%;
-      }
-
-    }
-    
-    @media screen and (max-width: 480px) {
-      .column {
-        flex: 1 1 calc(100% - 16px);
-        max-width: 100%;
-      }
-    }
-
-    #myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  #myImg:hover {opacity: 0.7;}
-  
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
-  
-  /* Modal Content (image) */
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-  }
-  
-  /* Caption of Modal Image */
-  #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-  }
-  
-  /* Add Animation */
-  .modal-content, #caption {  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-  
-  @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-  }
-  
-  /* The Close Button */
-  .close {
-    position: absolute;
-    top: 10%;
-    right: 3%;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
-    }
-  }
-    </style>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manfredini & Stella - La nostra azienda in foto dal 2001</title>
+    <meta name="description" content="Scopri l'azienda Manfredini & Stella: apicoltura artigianale, miele, cera d’api e prodotti naturali. Dal 2001 con passione.">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
     <div class="nav">
         <div class="nav-left">
             <i id="burger" class="fas fa-bars"onclick="toggleMenu()">  </i>
@@ -300,409 +32,101 @@
       <!--<a href="prodotti.html" onclick="closeMenu()">Prodotti</a>-->
       <a href="index.html#contatti" onclick="closeMenu()">Contatti</a>
     </div>
-<!-- MAIN (Center website) -->
-<div class="main">
-    <br><br><br>
+    <!-- MAIN (Center website) -->
+    <div class="main">
+        <br><br><br>
 
-<h1>La nostra azienda</h1>
-<hr>
+      <h1>La nostra azienda</h1>
+      <hr>
+      <h2>dal 2001</h2>
 
-<h2>dal 2001</h2>
+      <div id="myBtnContainer">
+        <!--<button class="btn active" onclick="filterSelection('all')"> Tutte</button>-->
+        <button class="btn active " onclick="filterSelection('Api')"> Api</button>
+        <button class="btn" onclick="filterSelection('miele')"> Miele</button>
+        <button class="btn" onclick="filterSelection('mercatini')"> Mercatini</button>
+        <button class="btn" onclick="filterSelection('prodotti')"> Prodotti</button>
+        <button class="btn" onclick="filterSelection('fattoria')"> Fattoria</button>
+      </div>
 
-<div id="myBtnContainer">
-  <!--<button class="btn active" onclick="filterSelection('all')"> Tutte</button>-->
-  <button class="btn active " onclick="filterSelection('Api')"> Api</button>
-  <button class="btn" onclick="filterSelection('miele')"> Miele</button>
-  <button class="btn" onclick="filterSelection('mercatini')"> Mercatini</button>
-  <button class="btn" onclick="filterSelection('prodotti')"> Prodotti</button>
-</div>
+      <div class="row"></div>
 
-<!-- Portfolio Gallery Grid -->
-<div class="row">
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/alveari.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
+      <div id="myModal" class="modal">
+        <br><br>
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+
     </div>
-  </div>
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/babbo.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-  <div class="column Api">
-    <div class="content">
-    <img src="foto/api/apeFiore.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-  <div class="column Api">
-    <div class="content">
-    <img src="foto/api/celleReali.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-  
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/sciame.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/telaino.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
+    <!-- script -->
+    <script>
+      const immagini = [
+        { src: 'foto/api/alveari.jpg', alt: 'Alveari in un campo soleggiato', categoria: 'Api' },
+        { src: 'foto/api/babbo.jpg', alt: 'Apicoltore esperto al lavoro', categoria: 'Api' },
+        { src: 'foto/api/apeFiore.jpg', alt: 'Ape su fiore in primo piano', categoria: 'Api' },
+        { src: 'foto/api/celleReali.jpg', alt: 'Celle reali in un telaino', categoria: 'Api' },
+        { src: 'foto/api/sciame.jpg', alt: 'Sciame di api su un ramo', categoria: 'Api' },
+        { src: 'foto/api/telaino.jpg', alt: 'Telaino ricoperto di api', categoria: 'Api' },
+        { src: 'foto/api/telaino2.jpg', alt: 'Ispezione di un telaino da parte dell’apicoltore', categoria: 'Api' },
+        { src: 'foto/api/gabriele.jpg', alt: 'Gabriele con attrezzatura da apicoltore', categoria: 'Api' },
+        { src: 'foto/api/gabriele2.jpg', alt: 'Gabriele osserva l’alveare', categoria: 'Api' },
+        { src: 'foto/api/caterina.jpg', alt: 'Caterina vicino agli alveari', categoria: 'Api' },
+        { src: 'foto/api/cristina.jpg', alt: 'Cristina con maschera da apicoltrice', categoria: 'Api' },
+        { src: 'foto/api/famiglia.jpg', alt: 'Foto di famiglia in apiario', categoria: 'Api' },
+        { src: 'foto/api/gabrieleBabbo.jpg', alt: 'Gabriele con il padre in apiario', categoria: 'Api' },
+        { src: 'foto/api/gabrieleSorella.jpg', alt: 'Gabriele e la sorella sorridenti', categoria: 'Api' },
+        { src: 'foto/api/mamma.jpg', alt: 'Mamma con telaino in mano', categoria: 'Api', width: '60%' },
+        { src: 'foto/api/mamma2.jpg', alt: 'Primo piano della mamma con api', categoria: 'Api' },
+        { src: 'foto/api/regina.jpg', alt: 'Ape regina visibile tra le operaie', categoria: 'Api' },
+        { src: 'foto/api/apeFioreRosso.jpg', alt: 'Ape su fiore rosso brillante', categoria: 'Api', width: '90%' },
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/telaino2.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/gabriele.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
+        { src: 'foto/prodotti/miele.jpg', alt: 'Barattoli di miele artigianale', categoria: 'prodotti' },
+        { src: 'foto/prodotti/candeleCera.jpg', alt: 'Candele in cera d’api fatte a mano', categoria: 'prodotti' },
+        { src: 'foto/prodotti/centroTavola.jpg', alt: 'Centro tavola con elementi in cera', categoria: 'prodotti' },
+        { src: 'foto/prodotti/ciondoliCera.jpg', alt: 'Ciondoli decorativi in cera', categoria: 'prodotti' },
+        { src: 'foto/prodotti/favo.jpg', alt: 'Favo naturale di miele', categoria: 'prodotti' },
+        { src: 'foto/prodotti/fioreCera.jpg', alt: 'Fiore scolpito in cera d’api', categoria: 'prodotti' },
+        { src: 'foto/prodotti/scatolinaCera.jpg', alt: 'Scatolina regalo in cera d’api', categoria: 'prodotti' },
+        { src: 'foto/prodotti/favoPecorino.jpg', alt: 'Favo di miele con pecorino', categoria: 'prodotti' },
+        { src: 'foto/prodotti/favoPecorino2.jpg', alt: 'Degustazione favo e pecorino', categoria: 'prodotti' },
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/gabriele2.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
+        { src: 'foto/miele/i millefiori non sono tutti uguali.png', alt: 'Confronto tra diversi tipi di miele millefiori', categoria: 'miele' },
+        { id: 'myImg', src: 'foto/miele/descrizione millefiori.png', alt: 'Tabella con caratteristiche dei mieli millefiori', categoria: 'miele' },
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/caterina.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
+        { src: 'foto/mercatini/mercatino1.jpg', alt: 'Bancarella di miele al mercato', categoria: 'mercatini' },
+        { src: 'foto/mercatini/mercatino2.jpg', alt: 'Vista panoramica di un mercatino', categoria: 'mercatini' },
+        { src: 'foto/mercatini/mercatino3.jpg', alt: 'Esposizione prodotti apistici al mercatino', categoria: 'mercatini' },
+        { src: 'foto/mercatini/mercatino4.jpg', alt: 'Stand con candele e miele', categoria: 'mercatini' },
+        { src: 'foto/mercatini/locandinaGiorgione.jpg', alt: 'Locandina evento mercato Giorgione', categoria: 'mercatini', width: '65%' },
+        { src: 'foto/mercatini/mercatinoGiorgione.png', alt: 'Foto del mercatino Giorgione', categoria: 'mercatini' },
+        { src: 'foto/mercatini/mercatinoGradoli.jpg', alt: 'Mercatino di Gradoli con clienti', categoria: 'mercatini' },
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/cristina.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
+                { src: 'foto/fattoria/bambina4.jpeg', alt: 'Foto attività per bambini', categoria: 'fattoria', width: '50%' },
+        { src: 'foto/fattoria/bambina2.jpeg', alt: 'Foto attività per bambini', categoria: 'fattoria' },
+        { src: 'foto/fattoria/bambina3.jpeg', alt: 'Foto attività per bambini', categoria: 'fattoria' },
+        { src: 'foto/fattoria/bambina.jpeg', alt: 'Foto attività per bambiniMercatino di Gradoli con clienti', categoria: 'fattoria' },
+        { src: 'foto/fattoria/alveareDidattico.jpg', alt: 'Alveare Didattico', categoria: 'fattoria',  width: '50%' }
+      ];
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/famiglia.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
+      const container = document.querySelector('.row');
 
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/gabrieleBabbo.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/gabrieleSorella.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/mamma.jpg" alt="Api" style="width:60%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/mamma2.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/regina.jpg" alt="Api" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column Api">
-    <div class="content">
-      <img src="foto/api/apeFioreRosso.jpg" alt="Api" style="width:90%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column miele">
-    <div class="content">
-      <img src="foto/miele/i millefiori non sono tutti uguali.png" alt="miele" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column miele">
-    <div class="content">
-      <img id="myImg" src="foto/miele/descrizione millefiori.png" alt="miele" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/mercatino1.jpg" alt="mercatini" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/mercatino2.jpg" alt="mercatini" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/mercatino3.jpg" alt="mercatini" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/mercatino4.jpg" alt="mercatini" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/locandinaGiorgione.jpg" alt="mercatini" style="width:65%;height: auto;">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/mercatinoGiorgione.png" alt="mercatini" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column mercatini">
-    <div class="content">
-      <img src="foto/mercatini/mercatinoGradoli.jpg" alt="mercatini" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/candeleCera.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/centroTavola.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/ciondoliCera.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/favo.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/fioreCera.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/miele.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img  src="foto/prodotti/scatolinaCera.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img src="foto/prodotti/favoPecorino.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-  <div class="column prodotti">
-    <div class="content">
-      <img  src="foto/prodotti/favoPecorino2.jpg" alt="prodotti" style="width:100%">
-      <!--<h4>Titolo</h4>
-      <p>Descrizione..</p>-->
-    </div>
-  </div>
-
-<!-- END GRID -->
-</div>
-
-<div id="myModal" class="modal">
-</br>
-</br>
-<span class="close">&times;</span>
-<img class="modal-content" id="img01">
-<div id="caption"></div>
-</div>
-
-<!-- END MAIN -->
-</div>
-
-<script>
-filterSelection("Api")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("column");
-
-  //if (c == "all") c = "";
-  if (c === "all") c = "default";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-
-function toggleMenu() {
-                var menu = document.getElementById("menu");
-                if (menu.style.display === "block") {
-                    menu.style.display = "none";
-                } else {
-                    menu.style.display = "block";
-                }
-            }
-            function closeMenu() {
-            document.getElementById("menu").style.display = "none";
-        }
-
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-            modal.style.display = "none";
-        }
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      immagini.forEach(({ src, alt, categoria, id = '', width = '100%' }) => {
+        const div = document.createElement('div');
+        div.className = `column ${categoria}`;
+        div.innerHTML = `
+          <div class="content">
+            <img ${id ? `id="${id}"` : ''} src="${src}" alt="${alt}" style="width:${width}">
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-</body>
+  </body>
 </html>

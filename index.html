@@ -1,33 +1,92 @@
 <!DOCTYPE html>
-	<html lang="en">
+	<html lang="it">
 	<head>
         <meta charset="utf-8">
-        <title>Apicoltura Manfredini & Stella – Api Regine e Miele a Gradoli</title>
-        <link rel="icon" href="/foto/varie/logo.png" type="image/png">
+        <title>Apicoltura Manfredini & Stella – Api Regine e Miele a Gradoli (VT)</title>
+        <link rel="icon" href="foto/varie/logo.png" type="image/png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO Base -->
         <meta name="description" content="Manfredini e Stella - Allevamento Api Regine a Gradoli. Scopri la nostra apicoltura, fattoria didattica e i nostri mieli.">
         <meta name="keywords" content="apicoltura, api regine, miele, fattoria didattica, Gradoli, Manfredini, Stella, Viterbo, cera, candele">
         <meta name="author" content="Manfredini e Stella">
         <meta name="robots" content="index, follow">
-        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <!--Tag Open Graph-->
+        <meta property="og:title" content="Apicoltura Manfredini & Stella – Api Regine e Miele a Gradoli" />
+        <meta property="og:description" content="Scopri la nostra apicoltura, fattoria didattica e i nostri mieli." />
+        <meta property="og:image" content="https://www.manfrediniestella.it/foto/varie/logo.png" />
+        <meta property="og:url" content="https://www.manfrediniestella.it" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="it_IT" />
+
+        <!-- Structured Data JSON-LD -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Apicoltura Manfredini e Stella",
+                "url": "https://www.manfrediniestella.it",
+                "logo": "https://www.manfrediniestella.it/foto/varie/logo.png",
+                "email": "info@manfrediniestella.it",
+                "telephone": "+39-328-721-9902",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Località Vena del Prete, snc",
+                    "addressLocality": "Gradoli",
+                    "addressRegion": "VT",
+                    "postalCode": "01010",
+                    "addressCountry": "IT"
+                },
+                "openingHoursSpecification": [
+                    {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                    }
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+39-328-721-9902",
+                    "contactType": "Customer Service",
+                    "availableLanguage": ["Italian"]
+                }
+            }
+        </script>
+
+        
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.manfrediniestella.it/sitemap.xml">
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	</head>
+    </head>
+
 	<body >
 		<div id="contenitore" data-spy="scroll" data-target=".navbar" data-offset="-50"> 
 		    <div id="home">
                 <br><br><br>
-                <img id="logo" src="foto/varie/logo.png" style="width: 300px;">
+                <img id="logo" src="foto/varie/logo.png" style="width: 300px;" alt="Logo Apicoltura Manfredini e Stella" loading="lazy">
 			    <h1 id="titolo_home">Un Luogo dove tutto può accadere...</h1>
 
 			</div>
 			<div id="contenitore_2" > 
+
                 <div class="nav">
                     <div class="nav-left">
                         <i id="burger" class="fas fa-bars"onclick="toggleMenu()">  </i>
                         <a href="index.html#servizi" class="nav-link">Servizi</a>
-                        <!--<a href="index.html#curiosità" class="nav-link">Curiosità</a>-->
                         <a href="index.html#contatti" class="nav-link">Contatti</a>
                     </div>
                     
@@ -44,6 +103,7 @@
                     <!--<a href="prodotti.html" onclick="closeMenu()">Prodotti</a>-->
                     <a href="index.html#contatti" onclick="closeMenu()">Contatti</a>
                 </div>	
+
 				<div id="servizi" class="div_sez">
                     </br>
                     <h1 class="titolo_sez">I nostri servizi</h1></br>
@@ -65,66 +125,21 @@
                                 <div class="overlay">
                                     <p>Ci sono esperienze che non si possono descrivere... Bisogna viverle!</p>
                                     
-                                    <button class="btn" onclick="location.href='#eventi'">Scopri di più</button>
+                                    <!--<button class="btn" onclick="location.href='#eventi'">Scopri di più</button>-->
+                                    <button class="btn" onclick="location.href='prenota.html'">Scopri di più</button>
                                 </div>
                             </div>
                             <p>Fattoria</p>
                         </div>
                     </div>
-                </div>
-                
-				<!--<div id="curiosità" class="div_sez" style="background-color:beige;">
-                </br>
-                    <h1 class="titolo_sez">Il Miele – Curiosità</h1>
-                    
-                    <div class="testo">
-                        <p>
-                          L'ape succhia il nettare dai fiori e lo trasforma scindendo gli zuccheri complessi in zuccheri semplici attraverso processi enzimatici.  
-                          Il miele è quindi ricco di <strong>glucosio</strong> e <strong>fruttosio</strong>, zuccheri direttamente assimilabili, ed è naturalmente carico di enzimi.
-                          È importante non superare i <strong>30°C</strong> nella lavorazione del miele per non danneggiare questi preziosi enzimi.
-                        </p>
-                        <p>
-                          La <strong>cristallizzazione</strong> è un fenomeno naturale: ogni tipo di miele ha una diversa propensione a cristallizzare.
-                        </p>
-                        <p>
-                          Il miele è <strong>sconsigliato per i bambini sotto l’anno di età</strong>, poiché potrebbe contenere spore di <em>Clostridium botulinum</em> in grado di svilupparsi
-                          nell’intestino ancora immaturo del lattante, provocando tossine pericolose.
-                        </p>
-                        <p>
-                          L’indice glicemico del miele varia in base al tipo:
-                          <ul>
-                            <li>Miele di acacia: IG <strong>32</strong></li>
-                            <li>Zucchero: IG <strong>61</strong></li>
-                            <li>Pasta: IG <strong>47–65</strong></li>
-                            <li>Altri mieli possono arrivare fino a IG <strong>95</strong></li>
-                          </ul>
-                        </p>
-                        <p>
-                          Assumendo miele in <strong>favo</strong>, mangiando anche la cera, si ha un apporto considerevole di <strong>vitamina A</strong>:
-                          <ul>
-                            <li>100 g di carote = 2–9 mg di carotenoidi</li>
-                            <li>100 g di cera = 8–12 mg di carotenoidi</li>
-                          </ul>
-                        </p>
-                      
-                        <p>
-                          Valore energetico:
-                          <ul>
-                            <li>100 g di miele = <strong>320 kcal</strong></li>
-                            <li>100 g di zucchero = <strong>400 kcal</strong></li>
-                          </ul>
-                        </p>
-                      </div>
-                      
-                </div>-->
-				
+                </div>			
 
-                <div id="eventi" class="div_sez" style="background-color:beige;">
+                <!--<div id="eventi" class="div_sez" style="background-color:beige;">
                 </br>
 					<h1 class="titolo_sez">Eventi</h1></br>
-                    <img id="myImg" src="foto/eventi/Apiario Aperto.png" alt="Fattoria Didattica" style="width:100%;max-width:300px">
+                    <img id="myImg" src="foto/eventi/Apiario Aperto.png" alt="Evento Apiario Aperto alla Fattoria Didattica" loading="lazy" style="width:100%;max-width:300px">
 
-                    <!-- The Modal -->
+  
                     <div id="myModal" class="modal">
                         </br>
                         </br>
@@ -132,7 +147,7 @@
                         <img class="modal-content" id="img01">
                         <div id="caption"></div>
                     </div>
-                </div>
+                </div>-->
 
 				<div id="contatti" class="div_sez" style="background-image: url('foto/varie/sfondoContatti.png');">		
                 </br>
@@ -153,52 +168,8 @@
 			</div> 
 		</div>
 
-        <script>
-            function toggleMenu() {
-                var menu = document.getElementById("menu");
-                if (menu.style.display === "block") {
-                    menu.style.display = "none";
-                } else {
-                    menu.style.display = "block";
-                }
-            }
-            function closeMenu() {
-            document.getElementById("menu").style.display = "none";
-        }
-
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-            modal.style.display = "none";
-        }
-        </script>
-
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Manfredini e Stella",
-      "url": "https://www.manfrediniestella.it",
-      "logo": "https://www.manfrediniestella.it/foto/varie/logo.png"
-    }
-    </script>
-    
-
+        <!-- script -->
+        <script src="js/script.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

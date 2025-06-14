@@ -275,36 +275,33 @@ h1 {
   </div>
 </div>
 </div>
-
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 <script>
-filterSelection("all");
-function filterSelection(c) {
-  var elements = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].style.display = elements[i].className.indexOf(c) > -1 ? "flex" : "none";
-  }
-}
-
-document.getElementById("myBtnContainer").addEventListener("click", function(event) {
-  if (event.target.classList.contains("btn")) {
-    let active = document.querySelector(".btn.active");
-    if (active) active.classList.remove("active");
-    event.target.classList.add("active");
-  }
-});
-function toggleMenu() {
-                var menu = document.getElementById("menu");
-                if (menu.style.display === "block") {
-                    menu.style.display = "none";
-                } else {
-                    menu.style.display = "block";
-                }
-            }
-            function closeMenu() {
-            document.getElementById("menu").style.display = "none";
-        }
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2v-CgVF_xKRxrRw5NmAgIwX0wU2Y5jhxURQGLFyKpz_2JCqnd9i0f5tWgBbzaJbLruAKEtCYL9?gv=true',
+      color: '#E4C441',
+      label: "Prenota una Visita",
+      target,
+    });
+  });
+})();
 </script>
+
+<form action="https://formspree.io/f/xvgrzlnp" method="POST">
+  <input type="text" name="nome" placeholder="Il tuo nome" required><br>
+  <input type="email" name="email" placeholder="La tua email" required><br>
+  <textarea name="messaggio" placeholder="Scrivi il tuo messaggio" required></textarea><br>
+  <button type="submit">Invia</button>
+</form>
+
+
+<!-- end Google Calendar Appointment Scheduling -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
